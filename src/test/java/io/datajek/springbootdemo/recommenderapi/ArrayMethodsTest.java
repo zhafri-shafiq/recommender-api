@@ -1,10 +1,31 @@
 package io.datajek.springbootdemo.recommenderapi;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayMethodsTest {
+
+    @BeforeAll
+    static void beforeAllTests() {
+        System.out.println("Run this code before all tests");
+    }
+
+    @AfterAll
+    static void afterAllTests() {
+        System.out.println("Run this code after all tests");
+    }
+
+    @BeforeEach
+    void init() {
+        System.out.println("Initializing before test");
+        ArrayMethods arrayMethods = new ArrayMethods();
+    }
+
+    @AfterEach
+    void afterEachTest() {
+        System.out.println("Clean up after test");
+    }
 
     @Test
     public void testfindIndex_numberInArray() {
@@ -51,6 +72,7 @@ class ArrayMethodsTest {
     }
 
     @Test
+    @Disabled
     void testunfinishTest_Fail() {
         fail("unimplemented methods");
     }
